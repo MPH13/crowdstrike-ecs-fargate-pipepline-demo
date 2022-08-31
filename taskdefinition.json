@@ -1,26 +1,17 @@
 {
-    "family": "tryan-fargate-flask-app", 
+    "family": "mph-fargate-super-business-app", 
     "networkMode": "awsvpc", 
     "containerDefinitions": [
         {
-            "name": "flask-app", 
-            "image": "#AWSACCOUNTID#.dkr.ecr.us-west-2.amazonaws.com/tryan/ecs-fargate-demo:latest", 
+            "name": "mph-flask-app", 
+            "image": "#AWSACCOUNTID#.dkr.ecr.us-west-2.amazonaws.com/super-business-app:latest", 
             "essential": true,
             "portMappings": [
                 {
                   "containerPort": 8080,
                   "protocol": "tcp"
                 }
-              ],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "tryan-fargate-flask-app",
-                    "awslogs-region": "us-west-2",
-                    "awslogs-create-group": "true",
-                    "awslogs-stream-prefix": "tryan-fargate-flask-app"
-                }
-            }
+              ]
         }
     ], 
     "requiresCompatibilities": [
